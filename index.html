@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Required meta tags-->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <!-- Color theme for statusbar -->
+    <meta name="theme-color" content="#2196f3">
+    <!-- Your app title -->
+    <title>App del Clima</title>
+    <!-- Path to Framework7 Library CSS -->
+    <link rel="stylesheet" href="lib/framework7/css/framework7.bundle.min.css">
+    <!-- Path to icons -->
+    <link rel="stylesheet" href="css/icons.css">
+    <!-- Path to your custom app styles-->
+    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+        integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+        crossorigin=""/>
+</head>
+
+<body>
+    <div id="app">
+        <!-- Statusbar overlay -->
+        <div class="statusbar"></div>
+    
+        <!-- Your main view, should have "view-main" class -->
+        <div class="view view-main">
+            <!-- Initial Page, "data-name" contains page name -->
+            <div data-name="index" class="page">
+                <!-- Scrollable page content -->
+                <div class="page-content">
+                    <center>
+<!----------------- Encabezado con Menú desplegable -->
+                    <div class="block">
+                        <h3>La APP del Pronóstico Local</h3>
+                        <div class="row box1">
+                            <div class="menu-item menu-item-dropdown col-45 margin-top-half">
+                              <div class="menu-item-content">Provincia</div>
+                              <div class="menu-dropdown menu-dropdown-left">
+                                <div id="menu-provincia" class="menu-dropdown-content" style="height: 230px">
+                                </div>
+                              </div>
+                            </div>
+                            <h2 id="selectProv" class="col-45 margin-half">----</h2>
+                        </div>
+                        <div class="row box2">
+                            <h2 id="selectLocal" class="col-45 margin-half">----</h2>
+                            <div class="menu-item menu-item-dropdown col-45 margin-top-half">
+                              <div class="menu-item-content">Localidad</div>
+                              <div class="menu-dropdown menu-dropdown-right">
+                                <div id="menu-localidad" class="menu-dropdown-content" style="height: 190px">
+                                </div>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+<!----------------- Detalles del Clima -->
+                    <div class="row">
+                        <div class="col-50">
+                            <div class="display-flex justify-content-space-around">
+                                <img src="" id="img_m" class="padding-left"/>
+                                <h3 id="temp_m" class="padding-rigth"></h3>
+                            </div>
+                            <h4>Por la Mañana</h4>
+                            <p id="desc_m"></p>
+                        </div>
+                        <div class="col-50">
+                            <div class="display-flex justify-content-space-around">
+                                <img src="" id="img_t" class="padding-left"/>
+                                <h3 id="temp_t" class="padding-rigth"></h3>
+                            </div>
+                            <h4>Por la Tarde</h4>
+                            <p id="desc_t"></p>
+                        </div>
+                    </div>
+<!----------------- Ubicación por coordenadas -->
+                    <div id="map"></div>
+
+                    </center>
+                </div>
+            </div>
+<!--------- Popup de inicio -->
+            <div class="popup popup-inicio">
+                <div class="block">
+                  <h3>Pronostico Local para Argentina</h3>
+                  <p><a id="iniciar" class="link popup-close" href="#">COMENZAR</a></p>
+                  <p>Bienvenidos a la App del pronóstico local.</p>
+                  <ul>
+                      <li>Podes consultar el pronóstico del Clima del día.</li>
+                      <li>Información sincronizada con el Servicio Meteorológico Nacional.</li>
+                      <li>Elegí la estación meteorológica mas cercana a tu ubicación.</li>
+                      <li>Podrás ver el mapa de la ubicación de dicha estación.</li>
+                      <br>
+                  </ul>
+                  <p>Leandro Lobo, noviembre de 2020.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="lib/framework7/js/framework7.bundle.min.js"></script>
+    <script type="text/javascript" src="js/my-app.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB81S8iqWqBILO2YRqTZtLvs5JA0_BJkv4&callback=initMap&libraries=&v=weekly" defer ></script>
+    </script>
+
+</body>
+
+</html>
+
