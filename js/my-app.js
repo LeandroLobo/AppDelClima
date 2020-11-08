@@ -69,8 +69,8 @@ function completarInfoClima(){
     $$('#desc_m').html(lugar[0].weather.morning_desc);
     $$('#temp_t').html(lugar[0].weather.afternoon_temp+'°C');
     $$('#desc_t').html(lugar[0].weather.afternoon_desc);    
-    $$('#img_m').attr('src','http://l.yimg.com/a/i/us/we/52/'+lugar[0].weather.morning_id+'.gif');
-    $$('#img_t').attr('src','http://l.yimg.com/a/i/us/we/52/'+lugar[0].weather.afternoon_id+'.gif');
+    $$('#img_m').attr('src','https://www.weather-atlas.com/weather/images/128x128/'+lugar[0].weather.afternoon_id+'.png');
+    $$('#img_t').attr('src','https://www.weather-atlas.com/weather/images/128x128/'+lugar[0].weather.afternoon_id+'.png');
 }
 
 function obtenerInfoClima(){
